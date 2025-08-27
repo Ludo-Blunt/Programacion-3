@@ -31,6 +31,14 @@ public double getPrecio(){
 }
 
 public void setPrecio(double precio){
-    return "Libro [id= " + id + ",Nombre= " + nombre + "Precio= " + precio + "]";
-    
+    this.precio = precio;
 }
+   @override
+   public String toString(){
+    return "Libro [id= " + id + ",Nombre= " + nombre + "Precio= " + precio + "]";   
+}
+
+public double calcularPrecio(Libro[]Libros){
+    double total = 
+}
+
