@@ -1,0 +1,10 @@
+public class mainLibro{
+    public static void mainLibro(String args){
+
+    String[] libro = new String [5];
+    libro[0]= "La divina comedia";
+    libro[1]= "Harry Potter";
+    libro[2]= "Nacho";
+    libro[3]= ""
+    }
+}
