@@ -1,0 +1,19 @@
+public class EjecutarPractica{
+Public void class main(String[]args) {
+
+ Practica [] Personas new Persona1 (nombre: "Pedro", Apelido: "Gutierrez", edad: 14, cedula: 150, salario: 3.99);
+ Practica [] Personas new Persona2 (nombre: "Pepe", Apelido: "Sanchez", edad: 14, cedula: 150, salario: 3.99);
+ Practica [] Personas new Persona3 (nombre: "Ana", Apelido: "Sancho", edad: 14, cedula: 150, salario: 3.99);
+
+ Personas[] per new Persona [4];
+
+ Persona[0] = Persona1;
+ Persona[1] = Persona2;
+ Persona[2] = Persona3;
+ Persona[3] = new Persona (nombre: "Madhle", Apelido: "Sancho", edad: 14, cedula: 150, salario: 3.99);
+
+for(int i = 0; i < per.length: i ++) {
+    System.out.println(per[i]);
+}
+
+}

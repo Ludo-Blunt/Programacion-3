@@ -1,1 +1,22 @@
+public class Practica
 
+    private String nombre;
+    private String Apellido;
+    private int edad;
+    private int cedula;
+    private double salario;
+
+
+    public Persona (String nombre, ,Sting Apelido, int edad, int cedula, double salario);
+    this.nombre = nombre;
+    this.Apelido= Apelido;
+    this.edad = edad;
+    this.cedula = cedula;
+    this.salario = salario;
+
+}
+    public String toString(){
+        return "Persona [id: ]"+ id + " Apellido. "+ Apelido + "Edad: " +edad+ "Cedula: " + cedula + "Salario: " + salario + " ]";
+    }
+
+}
