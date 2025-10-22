@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ExamenColaMapa {
+public class Ejercicio1 {
 
     static class ColaCircularEnteros {
         private int[] datos;
@@ -48,30 +48,30 @@ public class ExamenColaMapa {
     public static int balanceConCola(String s) {
         // recorro la cadena y encolo +1 o -1
         ColaCircularEnteros cola = new ColaCircularEnteros(s.length()); // creo una cola del tamaño de la cadena
-        for (int i = 0; i < s.length(); i++) {                          // recorro cada caracter
-            char c = s.charAt(i);                                       // obtengo el caracter actual
-            if (c == '(') {                                             // si es paréntesis de apertura
-                cola.encolar(1);                                        // encolo +1
-            } else if (c == ')') {                                      // si es de cierre
-                cola.encolar(-1);                                       // encolo -1
+        for (int i = 0; i < s.length(); i++) {  // recorro cada caracter
+            char c = s.charAt(i); // obtengo el caracter actual
+            if (c == '(') { // si es paréntesis de apertura
+                cola.encolar(1); // encolo +1
+            } else if (c == ')') { // si es de cierre
+                cola.encolar(-1);  // encolo -1
             }
         }
-        int suma = 0;                                                   // inicializo la suma
-        while (!cola.estaVacia()) {                                     // mientras haya datos en la cola
-            suma += cola.desencolar();                                  // sumo lo que saco
+        int suma = 0; // inicializo la suma
+        while (!cola.estaVacia()) {  // mientras haya datos en la cola
+            suma += cola.desencolar();  // sumo lo que saco
         }
-        return suma;                                                    // retorno la suma final
+        return suma;
     }
 
     // (50 pts) Registra intentos por nombre en un mapa.
     public static int registrarIntento(Map<String,Integer> intentos, String nombre) {
         // si existe, incremento, si no existe, lo inicio en 1
-        if (intentos.containsKey(nombre)) {                 // si ya está en el mapa
-            int valor = intentos.get(nombre);               // obtengo el valor actual
-            valor++;                                        // lo incremento
-            intentos.put(nombre, valor);                    // actualizo el mapa
+        if (intentos.containsKey(nombre)) {  // si ya está en el mapa
+            int valor = intentos.get(nombre); // obtengo el valor actual
+            valor++; // lo incremento
+            intentos.put(nombre, valor); // actualizo el mapa
         } else {
-            intentos.put(nombre, 1);                        // si no existe, lo inicio en 1
+            intentos.put(nombre, 1);  // si no existe, lo inicio en 1
         }
-        return 0;                                           // retorno 0 como estaba originalmente
+        return 0;
     }
