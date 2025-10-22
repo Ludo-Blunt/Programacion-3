@@ -57,10 +57,10 @@ public class Ejercicio2 {
         }
         int suma = 0;  // inicializo la suma total
         while (!cola.estaVacia()) {  // mientras la cola no esté vacía
-            suma += cola.desencolar();  // saco y sumo cada valor
+        suma += cola.desencolar();  // saco y sumo cada valor
         }
         return suma;  // retorno la suma final del balance
-    }
+        }
 
     // (50 pts) Registra intentos por nombre en un mapa.
     public static int registrarIntento(Map<String,Integer> intentos, String nombre) {
@@ -68,9 +68,11 @@ public class Ejercicio2 {
             int valor = intentos.get(nombre); // obtengo el valor actual
             valor++;  // incremento el contador
             intentos.put(nombre, valor);  // actualizo el mapa con el nuevo valor
-        } else {
+        } 
+        else 
+        {
             intentos.put(nombre, 1);  // si no existe, lo inicio en 1
         }
         return 0;
-    }
+        }
 
