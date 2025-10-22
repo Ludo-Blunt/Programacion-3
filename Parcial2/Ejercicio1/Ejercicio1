@@ -46,7 +46,6 @@ public class Ejercicio1 {
 
     // (50 pts) Calcula el balance de paréntesis encolando +1 y -1.
     public static int balanceConCola(String s) {
-        // recorro la cadena y encolo +1 o -1
         ColaCircularEnteros cola = new ColaCircularEnteros(s.length()); // creo una cola del tamaño de la cadena
         for (int i = 0; i < s.length(); i++) {  // recorro cada caracter
             char c = s.charAt(i); // obtengo el caracter actual
