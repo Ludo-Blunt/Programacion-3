@@ -1,0 +1,13 @@
+    public class EjecutarEjercicio2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);                           // creo un Scanner para leer datos
+        String cadena = sc.nextLine();                                 // leo una cadena de la entrada
+        System.out.println("Balance cola: " + balanceConCola(cadena)); // muestro el resultado del balance
+
+        Map<String,Integer> intentos = new HashMap<String,Integer>();  // creo un mapa vacío para guardar intentos
+        System.out.println("intentos (Ana): " + registrarIntento(intentos, "Ana")); // registro un intento de Ana
+        System.out.println("intentos (Ana): " + registrarIntento(intentos, "Ana")); // registro otro intento de Ana
+
+        sc.close();                                                    // cierro el Scanner
+    }
+}
