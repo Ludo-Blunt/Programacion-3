@@ -1,0 +1,44 @@
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Grafo g = new Grafo();
+
+        g.agregarArista("A", "B", 5);
+        g.agregarArista("A", "C", 2);
+        g.agregarArista("B", "D", 1);
+        g.agregarArista("C", "B", 8);
+        g.agregarArista("C", "D", 7);
+
+        System.out.println("=== ALGORITMO DE DIJKSTRA ===");
+        Map<String, Integer> distancias = g.dijkstra("A");
+        for (String nodo : distancias.keySet()) {
+            System.out.println("Distancia mÃ­nima desde A hasta " + nodo + ": " + distancias.get(nodo));
+        }
+
+        System.out.println("=== MÃ‰TODOS DE ORDENAMIENTO ===");
+        int[] arreglo = {5, 3, 8, 4, 2, 7, 1, 6};
+
+        System.out.println("Arreglo original: " + Arrays.toString(arreglo));
+
+        int[] copia;
+
+        copia = arreglo.clone();
+        burbuja(copia);
+        System.out.println("Burbuja: " + Arrays.toString(copia));
+
+        copia = arreglo.clone();
+        insercion(copia);
+        System.out.println("InserciÃ³n: " + Arrays.toString(copia));
+
+        copia = arreglo.clone();
+        seleccion(copia);
+        System.out.println("SelecciÃ³n: " + Arrays.toString(copia));
+
+        copia = arreglo.clone();
+        quickSort(copia, 0, copia.length - 1);
+        System.out.println("Quick Sort: " + Arrays.toString(copia));
+
+        copia = arreglo.clone();
+        mergeSort(copia, 0, copia.length - 1);
+        System.out.println("Merge Sort: " + Arrays.toString(copia));
+    }
+}
