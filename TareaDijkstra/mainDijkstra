@@ -1,0 +1,24 @@
+public class DijkstraListasNombres {
+
+    public static void main(String[] args) {
+
+        GrafoCiudades g = new GrafoCiudades();
+
+        g.agregarArista("Cali", "Tulua", 50);
+        g.agregarArista("Tulua", "Sonson", 90);
+        g.agregarArista("Sonson", "Medellin", 100);
+        g.agregarArista("Medellin", "Turbo", 100);
+        g.agregarArista("Turbo", "Monteria", 160);
+        g.agregarArista("Monteria", "Cartagena", 277);
+
+        Map<String, Integer> distancias = g.dijkstra("Cali");
+
+        System.out.println("DISTANCIAS DESDE CALI:");
+        for (String ciudad : distancias.keySet()) {
+            System.out.println(ciudad + " → " + distancias.get(ciudad) + " km");
+        }
+
+        System.out.println("\nDistancia más corta de Cali a Cartagena:");
+        System.out.println(distancias.get("Cartagena") + " km");
+    }
+}

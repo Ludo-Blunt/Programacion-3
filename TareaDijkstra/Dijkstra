@@ -1,0 +1,84 @@
+import java.util.*;
+
+class Arista {
+    int destino;
+    int peso;
+
+    public Arista(int destino, int peso) {
+        this.destino = destino;
+        this.peso = peso;
+    }
+}
+
+class GrafoCiudades {
+
+    private Map<String, Integer> ciudadAindice = new HashMap<>();
+    private Map<Integer, String> indiceAciudad = new HashMap<>();
+    private List<List<Arista>> ady = new ArrayList<>();
+    private int contador = 0;
+
+
+    private void registrarCiudad(String nombre) {
+        if (!ciudadAindice.containsKey(nombre)) {
+            ciudadAindice.put(nombre, contador);
+            indiceAciudad.put(contador, nombre);
+            ady.add(new LinkedList<>());
+            contador++;
+        }
+    }
+
+    public void agregarArista(String origen, String destino, int peso) {
+
+        registrarCiudad(origen);
+        registrarCiudad(destino);
+
+        int o = ciudadAindice.get(origen);
+        int d = ciudadAindice.get(destino);
+
+        ady.get(o).add(new Arista(d, peso));
+        ady.get(d).add(new Arista(o, peso)); 
+    }
+
+
+    public Map<String, Integer> dijkstra(String inicio) {
+
+        int n = contador;
+
+        int[] dist = new int[n];
+        boolean[] visitado = new boolean[n];
+
+        Arrays.fill(dist, Integer.MAX_VALUE);
+
+        dist[ciudadAindice.get(inicio)] = 0;
+
+        LinkedList<Integer> cola = new LinkedList<>();
+        cola.add(ciudadAindice.get(inicio));
+
+        while (!cola.isEmpty()) {
+
+            int u = cola.getFirst();
+            for (int nodo : cola) {
+                if (dist[nodo] < dist[u]) u = nodo;
+            }
+            cola.remove((Integer) u);
+            visitado[u] = true;
+
+            for (Arista a : ady.get(u)) {
+                int v = a.destino;
+                int peso = a.peso;
+
+                if (!visitado[v] && dist[u] + peso < dist[v]) {
+                    dist[v] = dist[u] + peso;
+                    cola.add(v);
+                }
+            }
+        }
+
+        Map<String, Integer> resultado = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            resultado.put(indiceAciudad.get(i), dist[i]);
+        }
+
+        return resultado;
+    }
+}
